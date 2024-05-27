@@ -1,0 +1,43 @@
+
+charge remote taranis
+charge camera (sony rx10VII or canon g16)
+charge momav batteries
+
+remote taranis x9d
+usb cable 1.5m for remote
+
+camera (sony rx10VII or canon g16)
+carger for camera
+tripod for camera
+
+companion pc (surface)
+charger for companion pc
+external mouse
+ethernet cable companion pc <-> drone_net router
+ethernet to usb adapter
+
+ground pc (zotac zbox)
+power brick ground pc
+drone_net router (tp-link)
+power brick drone_net router
+ethernet cable drone_net router <-> ground pc
+2nd screen
+smartphone + charger
+
+momav drone
+t265 camera addon
+optitrack markers addon (+needed screws)
+tether mount addon
+tether rope + carabiner + pulley
+spare propellers
+beeper
+balancer with screen
+
+bit hex 2mm, 2.5mm
+bit outer hex 5.5mm, 4.5mm, 8mm
+bit slit 4mm
+needle plyers
+
+water bottle
+snacks (sweet + salty)
+bluetooth speaker

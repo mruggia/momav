@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CADFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="0.9.8.0" Name="m_mount_servo">
+  <layers>
+    <layer name="0" color="255,255,255">
+      <ModificationCount>0</ModificationCount>
+      <objects />
+    </layer>
+    <layer name="1" color="255,255,255">
+      <ModificationCount>0</ModificationCount>
+      <objects>
+        <circle id="9" c="-128.4,16.2,0" d="3">
+          <ModificationCount>241</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="10" c="-154,16.2,0" d="3">
+          <ModificationCount>241</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="11" c="-128.4,34,0" d="3">
+          <ModificationCount>241</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="12" Closed="true">
+          <ModificationCount>242</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-125.4,12.5,0</p>
+            <p b="0.41421356237309503">-125.4,35.5,0</p>
+            <p>-126.9,37,0</p>
+            <p b="0.41421356237309503">-155.5,37,0</p>
+            <p>-157,35.5,0</p>
+            <p b="0.414213562373095">-157,12.5,0</p>
+            <p>-155.5,11,0</p>
+            <p b="0.41421356237309503">-126.9,11,0</p>
+          </pts>
+        </pline>
+        <circle id="13" c="-128.4,50.2,0" d="3">
+          <ModificationCount>250</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="14" c="-154,50.2,0" d="3">
+          <ModificationCount>250</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="15" c="-128.4,68,0" d="3">
+          <ModificationCount>250</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="16" Closed="true">
+          <ModificationCount>250</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-125.4,46.5,0</p>
+            <p b="0.41421356237309503">-125.4,69.5,0</p>
+            <p>-126.9,71,0</p>
+            <p b="0.41421356237309503">-155.5,71,0</p>
+            <p>-157,69.5,0</p>
+            <p b="0.414213562373095">-157,46.5,0</p>
+            <p>-155.5,45,0</p>
+            <p b="0.41421356237309503">-126.9,45,0</p>
+          </pts>
+        </pline>
+        <circle id="21" c="-128.4,84.2,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="22" c="-154,84.2,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="23" c="-128.4,102,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="24" Closed="true">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-125.4,80.5,0</p>
+            <p b="0.41421356237309503">-125.4,103.5,0</p>
+            <p>-126.9,105,0</p>
+            <p b="0.41421356237309503">-155.5,105,0</p>
+            <p>-157,103.5,0</p>
+            <p b="0.414213562373095">-157,80.5,0</p>
+            <p>-155.5,79,0</p>
+            <p b="0.41421356237309503">-126.9,79,0</p>
+          </pts>
+        </pline>
+        <circle id="25" c="-128.4,118.2,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="26" c="-154,118.2,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="27" c="-128.4,136,0" d="3">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="28" Closed="true">
+          <ModificationCount>284</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-125.4,114.5,0</p>
+            <p b="0.41421356237309503">-125.4,137.5,0</p>
+            <p>-126.9,139,0</p>
+            <p b="0.41421356237309503">-155.5,139,0</p>
+            <p>-157,137.5,0</p>
+            <p b="0.414213562373095">-157,114.5,0</p>
+            <p>-155.5,113,0</p>
+            <p b="0.41421356237309503">-126.9,113,0</p>
+          </pts>
+        </pline>
+        <circle id="29" c="-88.4,16.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="30" c="-114,16.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="31" c="-88.4,34,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="32" Closed="true">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-85.4,12.5,0</p>
+            <p b="0.41421356237309503">-85.4,35.5,0</p>
+            <p>-86.9,37,0</p>
+            <p b="0.41421356237309503">-115.5,37,0</p>
+            <p>-117,35.5,0</p>
+            <p b="0.414213562373095">-117,12.5,0</p>
+            <p>-115.5,11,0</p>
+            <p b="0.41421356237309503">-86.9,11,0</p>
+          </pts>
+        </pline>
+        <circle id="33" c="-88.4,50.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="34" c="-114,50.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="35" c="-88.4,68,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="36" Closed="true">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-85.4,46.5,0</p>
+            <p b="0.41421356237309503">-85.4,69.5,0</p>
+            <p>-86.9,71,0</p>
+            <p b="0.41421356237309503">-115.5,71,0</p>
+            <p>-117,69.5,0</p>
+            <p b="0.414213562373095">-117,46.5,0</p>
+            <p>-115.5,45,0</p>
+            <p b="0.41421356237309503">-86.9,45,0</p>
+          </pts>
+        </pline>
+        <circle id="37" c="-88.4,84.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="38" c="-114,84.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="39" c="-88.4,102,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="40" Closed="true">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-85.4,80.5,0</p>
+            <p b="0.41421356237309503">-85.4,103.5,0</p>
+            <p>-86.9,105,0</p>
+            <p b="0.41421356237309503">-115.5,105,0</p>
+            <p>-117,103.5,0</p>
+            <p b="0.414213562373095">-117,80.5,0</p>
+            <p>-115.5,79,0</p>
+            <p b="0.41421356237309503">-86.9,79,0</p>
+          </pts>
+        </pline>
+        <circle id="41" c="-88.4,118.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="42" c="-114,118.2,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="43" c="-88.4,136,0" d="3">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="44" Closed="true">
+          <ModificationCount>238</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-85.4,114.5,0</p>
+            <p b="0.41421356237309503">-85.4,137.5,0</p>
+            <p>-86.9,139,0</p>
+            <p b="0.41421356237309503">-115.5,139,0</p>
+            <p>-117,137.5,0</p>
+            <p b="0.414213562373095">-117,114.5,0</p>
+            <p>-115.5,113,0</p>
+            <p b="0.41421356237309503">-86.9,113,0</p>
+          </pts>
+        </pline>
+        <circle id="45" c="-48.4,16.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="46" c="-74,16.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="47" c="-48.4,34,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="48" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-45.4,12.5,0</p>
+            <p b="0.41421356237309503">-45.4,35.5,0</p>
+            <p>-46.9,37,0</p>
+            <p b="0.41421356237309503">-75.5,37,0</p>
+            <p>-77,35.5,0</p>
+            <p b="0.414213562373095">-77,12.5,0</p>
+            <p>-75.5,11,0</p>
+            <p b="0.41421356237309503">-46.9,11,0</p>
+          </pts>
+        </pline>
+        <circle id="49" c="-48.4,50.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="50" c="-74,50.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="51" c="-48.4,68,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="52" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-45.4,46.5,0</p>
+            <p b="0.41421356237309503">-45.4,69.5,0</p>
+            <p>-46.9,71,0</p>
+            <p b="0.41421356237309503">-75.5,71,0</p>
+            <p>-77,69.5,0</p>
+            <p b="0.414213562373095">-77,46.5,0</p>
+            <p>-75.5,45,0</p>
+            <p b="0.41421356237309503">-46.9,45,0</p>
+          </pts>
+        </pline>
+        <circle id="53" c="-48.4,84.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="54" c="-74,84.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="55" c="-48.4,102,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="56" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-45.4,80.5,0</p>
+            <p b="0.41421356237309503">-45.4,103.5,0</p>
+            <p>-46.9,105,0</p>
+            <p b="0.41421356237309503">-75.5,105,0</p>
+            <p>-77,103.5,0</p>
+            <p b="0.414213562373095">-77,80.5,0</p>
+            <p>-75.5,79,0</p>
+            <p b="0.41421356237309503">-46.9,79,0</p>
+          </pts>
+        </pline>
+        <circle id="57" c="-48.4,118.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="58" c="-74,118.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="59" c="-48.4,136,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="60" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-45.4,114.5,0</p>
+            <p b="0.41421356237309503">-45.4,137.5,0</p>
+            <p>-46.9,139,0</p>
+            <p b="0.41421356237309503">-75.5,139,0</p>
+            <p>-77,137.5,0</p>
+            <p b="0.414213562373095">-77,114.5,0</p>
+            <p>-75.5,113,0</p>
+            <p b="0.41421356237309503">-46.9,113,0</p>
+          </pts>
+        </pline>
+        <circle id="61" c="-8.40000000000001,16.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="62" c="-34,16.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="63" c="-8.40000000000001,34,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="64" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-5.40000000000001,12.5,0</p>
+            <p b="0.41421356237309503">-5.40000000000001,35.5,0</p>
+            <p>-6.90000000000001,37,0</p>
+            <p b="0.41421356237309503">-35.5,37,0</p>
+            <p>-37,35.5,0</p>
+            <p b="0.414213562373095">-37,12.5,0</p>
+            <p>-35.5,11,0</p>
+            <p b="0.41421356237309503">-6.90000000000001,11,0</p>
+          </pts>
+        </pline>
+        <circle id="65" c="-8.40000000000001,50.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="66" c="-34,50.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="67" c="-8.40000000000001,68,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="68" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-5.40000000000001,46.5,0</p>
+            <p b="0.41421356237309503">-5.40000000000001,69.5,0</p>
+            <p>-6.90000000000001,71,0</p>
+            <p b="0.41421356237309503">-35.5,71,0</p>
+            <p>-37,69.5,0</p>
+            <p b="0.414213562373095">-37,46.5,0</p>
+            <p>-35.5,45,0</p>
+            <p b="0.41421356237309503">-6.90000000000001,45,0</p>
+          </pts>
+        </pline>
+        <circle id="69" c="-8.39999999999998,84.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="70" c="-34,84.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="71" c="-8.39999999999998,102,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="72" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-5.39999999999998,80.5,0</p>
+            <p b="0.41421356237309503">-5.39999999999998,103.5,0</p>
+            <p>-6.89999999999998,105,0</p>
+            <p b="0.41421356237309503">-35.5,105,0</p>
+            <p>-37,103.5,0</p>
+            <p b="0.414213562373095">-37,80.5,0</p>
+            <p>-35.5,79,0</p>
+            <p b="0.41421356237309503">-6.89999999999998,79,0</p>
+          </pts>
+        </pline>
+        <circle id="73" c="-8.39999999999998,118.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="74" c="-34,118.2,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <circle id="75" c="-8.39999999999998,136,0" d="3">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+        </circle>
+        <pline id="76" Closed="true">
+          <ModificationCount>280</ModificationCount>
+          <mat m="Identity" />
+          <pts>
+            <p>-5.39999999999998,114.5,0</p>
+            <p b="0.41421356237309503">-5.39999999999998,137.5,0</p>
+            <p>-6.89999999999998,139,0</p>
+            <p b="0.41421356237309503">-35.5,139,0</p>
+            <p>-37,137.5,0</p>
+            <p b="0.414213562373095">-37,114.5,0</p>
+            <p>-35.5,113,0</p>
+            <p b="0.41421356237309503">-6.89999999999998,113,0</p>
+          </pts>
+        </pline>
+      </objects>
+    </layer>
+  </layers>
+  <MachiningOptions>
+    <Stock>
+      <PMin>0,0</PMin>
+      <PMax>0,0</PMax>
+      <Color>255,165,0</Color>
+    </Stock>
+    <ToolProfile>Unspecified</ToolProfile>
+  </MachiningOptions>
+  <parts>
+    <part Name="Part1">
+      <machineops>
+        <drill>
+          <WorkPlane state="Default">XY</WorkPlane>
+          <OptimisationMode state="Default">Experimental</OptimisationMode>
+          <RoughingFinishing state="Default">Roughing</RoughingFinishing>
+          <ToolDiameter state="Value">3.175</ToolDiameter>
+          <ToolNumber state="Default">0</ToolNumber>
+          <ToolProfile state="Default">Unspecified</ToolProfile>
+          <PlungeFeedrate state="Default">200</PlungeFeedrate>
+          <CutFeedrate state="Default">600</CutFeedrate>
+          <MaxCrossoverDistance state="Default">0.8</MaxCrossoverDistance>
+          <CustomMOPHeader state="Default" />
+          <CustomMOPFooter state="Default" />
+          <Name>1_drill</Name>
+          <StockSurface state="Default">0</StockSurface>
+          <RoughingClearance state="Default">0</RoughingClearance>
+          <ClearancePlane state="Default">2</ClearancePlane>
+          <SpindleDirection state="Default">CW</SpindleDirection>
+          <SpindleSpeed state="Default">1000</SpindleSpeed>
+          <SpindleRange state="Default">0</SpindleRange>
+          <VelocityMode state="Default">Undefined</VelocityMode>
+          <primitive>
+            <prim>26</prim>
+            <prim>25</prim>
+            <prim>27</prim>
+            <prim>43</prim>
+            <prim>41</prim>
+            <prim>42</prim>
+            <prim>39</prim>
+            <prim>37</prim>
+            <prim>38</prim>
+            <prim>23</prim>
+            <prim>21</prim>
+            <prim>22</prim>
+            <prim>35</prim>
+            <prim>33</prim>
+            <prim>34</prim>
+            <prim>15</prim>
+            <prim>13</prim>
+            <prim>14</prim>
+            <prim>31</prim>
+            <prim>29</prim>
+            <prim>30</prim>
+            <prim>11</prim>
+            <prim>9</prim>
+            <prim>10</prim>
+            <prim>58</prim>
+            <prim>57</prim>
+            <prim>59</prim>
+            <prim>75</prim>
+            <prim>73</prim>
+            <prim>74</prim>
+            <prim>55</prim>
+            <prim>53</prim>
+            <prim>54</prim>
+            <prim>70</prim>
+            <prim>69</prim>
+            <prim>71</prim>
+            <prim>67</prim>
+            <prim>65</prim>
+            <prim>66</prim>
+            <prim>62</prim>
+            <prim>61</prim>
+            <prim>63</prim>
+            <prim>49</prim>
+            <prim>51</prim>
+            <prim>50</prim>
+            <prim>47</prim>
+            <prim>45</prim>
+            <prim>46</prim>
+          </primitive>
+          <TargetDepth state="Value">-3.2</TargetDepth>
+          <DepthIncrement state="Value">0.4</DepthIncrement>
+          <DrillLeadOut state="Default">False</DrillLeadOut>
+          <SpiralFlatBase state="Default">True</SpiralFlatBase>
+          <LeadOutLength state="Default">0</LeadOutLength>
+          <DrillingMethod state="Default">CannedCycle</DrillingMethod>
+          <PeckDistance state="Default">0</PeckDistance>
+          <RetractHeight state="Default">2</RetractHeight>
+          <Dwell state="Default">0</Dwell>
+          <CustomScript state="Default" />
+        </drill>
+        <profile>
+          <WorkPlane state="Default">XY</WorkPlane>
+          <OptimisationMode state="Default">Experimental</OptimisationMode>
+          <RoughingFinishing state="Default">Roughing</RoughingFinishing>
+          <ToolDiameter state="Value">3.175</ToolDiameter>
+          <ToolNumber state="Default">0</ToolNumber>
+          <ToolProfile state="Default">Unspecified</ToolProfile>
+          <PlungeFeedrate state="Default">200</PlungeFeedrate>
+          <CutFeedrate state="Value">800</CutFeedrate>
+          <MaxCrossoverDistance state="Default">0.8</MaxCrossoverDistance>
+          <CustomMOPHeader state="Default" />
+          <CustomMOPFooter state="Default" />
+          <Name>2_free</Name>
+          <StockSurface state="Default">0</StockSurface>
+          <RoughingClearance state="Default">0</RoughingClearance>
+          <ClearancePlane state="Default">2</ClearancePlane>
+          <SpindleDirection state="Default">CW</SpindleDirection>
+          <SpindleSpeed state="Default">1000</SpindleSpeed>
+          <SpindleRange state="Default">0</SpindleRange>
+          <VelocityMode state="Default">Undefined</VelocityMode>
+          <primitive>
+            <prim>44</prim>
+            <prim>28</prim>
+            <prim>40</prim>
+            <prim>24</prim>
+            <prim>16</prim>
+            <prim>36</prim>
+            <prim>32</prim>
+            <prim>12</prim>
+            <prim>60</prim>
+            <prim>56</prim>
+            <prim>52</prim>
+            <prim>48</prim>
+            <prim>64</prim>
+            <prim>68</prim>
+            <prim>72</prim>
+            <prim>76</prim>
+          </primitive>
+          <TargetDepth state="Value">-3.2</TargetDepth>
+          <DepthIncrement state="Value">0.4</DepthIncrement>
+          <FinalDepthIncrement state="Default">0</FinalDepthIncrement>
+          <CutOrdering state="Default">DepthFirst</CutOrdering>
+          <CutWidth state="Default">0</CutWidth>
+          <StepOver state="Default">0.6</StepOver>
+          <StepoverFeedrate state="Default">Plunge Feedrate</StepoverFeedrate>
+          <InsideOutside state="Default">Outside</InsideOutside>
+          <MillingDirection state="Default">Conventional</MillingDirection>
+          <CollisionDetection state="Default">True</CollisionDetection>
+          <CornerOvercut state="Default">False</CornerOvercut>
+          <LeadInMove state="Default" />
+          <LeadOutMove state="Default" />
+          <HoldingTabs state="Default">
+            <TabMethod>None</TabMethod>
+            <Width>3</Width>
+            <Height>3</Height>
+            <MinimumTabs>3</MinimumTabs>
+            <MaximumTabs>6</MaximumTabs>
+            <TabDistance>40</TabDistance>
+            <SizeThreshold>4</SizeThreshold>
+            <UseLeadIns>False</UseLeadIns>
+            <TabStyle>Triangle</TabStyle>
+          </HoldingTabs>
+          <SideProfile state="Default" />
+        </profile>
+      </machineops>
+      <Stock>
+        <PMin>0,0</PMin>
+        <PMax>0,0</PMax>
+        <Color>255,165,0</Color>
+      </Stock>
+      <ToolProfile>Unspecified</ToolProfile>
+      <Nesting>
+        <BasePoint />
+        <NestMethod>None</NestMethod>
+      </Nesting>
+    </part>
+  </parts>
+  <ActiveLayer>1</ActiveLayer>
+  <ActivePart>Part1</ActivePart>
+</CADFile>

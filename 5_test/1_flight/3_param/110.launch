@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<launch>
+	<group ns="momav">
+
+		<arg name="state" default="track" /> 	<!-- type of body state variable to use: imu, cam, track, sim -->
+		<param name="body_state" value="body_state_$(arg state)" />
+
+		<param name="m"		value="2.50" />		<!-- mass of momav [kg] -->
+		<param name="Ix"	value="0.0214" />	<!-- angular mass of momav arround x axis [kg*m^2] -->
+		<param name="Iy"	value="0.0192" />	<!-- angular mass of momav arround y axis [kg*m^2] -->
+		<param name="Iz"	value="0.0208" />	<!-- angular mass of momav arround z axis [kg*m^2] -->
+
+		<!-- commander. monitors the states & timeouts of the other nodes -->
+		<node pkg="momav" type="commander" name="commander">
+
+			<param name="rate"			value="25" />		<!-- publish rate of commander_state and commander_stream topics -->
+			<param name="timeout"		value="0.5" />		<!-- time before a missing topic triggers a timeout [sec]-->
+			<param name="volt_min"		value="21.0" />		<!-- battery voltage that triggers a warning -->
+			<param name="arm_chn"		value="9" />		<!-- remote channel used for arming/disarming-->
+			<param name="arm_lim_fz"	value="20.0" />		<!-- z direction force setpoint limit when arming-->
+			<param name="arm_lim_fxy"	value="4.00" />		<!-- xy direction force setpoint limit when arming -->
+			<param name="arm_lim_t"		value="0.40" />		<!-- torque setpoint limit when arming-->
+
+		</node>
+
+
+		<!-- CONTROLLERS -->
+
+		<!-- navigator. publishes pose setpoints based on remote inputs or predefined trajectories -->
+		<node pkg="momav" type="controller_navigation" name="controller_navigation">
+
+			<param name="traj_run_chn"	value="11" />		<!-- channel for executing setpoint trajectory -->
+			<param name="traj_sel_chn"	value="10" />		<!-- channel for selecting setpoint trajectory (down=position, middle=rotation, up=???) -->
+			<param name="traj_pos_dist"	value="0.5" />		<!-- position change from 0 in setpoint trajectory [m] -->
+			<param name="traj_rot_dist"	value="6.283" />	<!-- rotation change from 0 in setpoint trajectory [deg] -->
+			<param name="traj_pos_time"	value="4.0" />		<!-- time to run one step of position fixed setpoint trajectory (not accounting for limit acc=vel/2)-->
+			<param name="traj_rot_time"	value="8.0" />		<!-- time to run one step of rotation fixed setpoint trajectory (not accounting for limit acc=vel/2)-->
+			
+			<param name="vel_pos"	value="0.50" />		<!-- maximum position velocity (remote) -->
+			<param name="acc_pos"	value="0.25" />		<!-- maximum position acceleration (remote) -->
+			<param name="vel_rot"	value="1.571" />	<!-- maximum orientation velocity (remote) -->
+			<param name="acc_rot"	value="0.785" />	<!-- maximum orientation acceleration (remote) -->
+			<param name="jerk_flt"	value="0.1" />		<!-- moving average filter on feed-forward force/torque to prevent jerks -->
+
+			<param name="x_chn"		value="2" />		<!-- x position remote channel -->
+			<param name="x_min"		value="-1.0" />		<!-- x position at minimum deflection [m] -->
+			<param name="x_max"		value="+1.0" />		<!-- x position at maximum deflection [m] -->
+			<param name="y_chn"		value="1" />		<!-- y position remote channel -->
+			<param name="y_min"		value="+1.0" />		<!-- y position at minimum deflection [m] -->
+			<param name="y_max"		value="-1.0" />		<!-- y position at maximum deflection [m] -->
+			<param name="z_chn"		value="0" />		<!-- z position remote channel -->
+			<param name="z_min"		value="-0.25" />	<!-- z position at minimum deflection [m] -->
+			<param name="z_max"		value="+1.50" />	<!-- z position at maximum deflection [m] -->
+
+			<param name="yaw_chn"	value="12" />		<!-- yaw remote channel -->
+			<param name="yaw_min"	value="+90" />		<!-- yaw at minimum deflection [deg] -->
+			<param name="yaw_max"	value="-90" />		<!-- yaw at maximum deflection [deg] -->
+			<param name="pitch_chn"	value="15" />		<!-- pitch remote channel -->
+			<param name="pitch_min"	value="+90" />		<!-- pitch at minimum deflection [deg] -->
+			<param name="pitch_max"	value="-90" />		<!-- pitch at maximum deflection [deg] -->
+			<param name="roll_chn"	value="13" />		<!-- roll remote channel -->
+			<param name="roll_min"	value="-90" />		<!-- roll at minimum deflection [deg] -->
+			<param name="roll_max"	value="+90" />		<!-- roll at maximum deflection [deg] -->
+
+		</node>
+
+		<!-- high-level flight controller. computes desired wrench from orientation & user input -->
+		<node pkg="momav" type="controller_pose" name="controller_pose">
+
+			<param name="P_rot"		value="1.40" />		<!-- P proportional gain for orientation control -->
+			<param name="I_rot"		value="0.20" />		<!-- I integral gain for orientation control -->
+			<param name="D_rot"		value="0.25" />		<!-- D derivative gain for orientation control -->
+
+			<param name="P_pos"		value="40.0" />		<!-- P proportional gain for translation control -->
+			<param name="I_pos"		value="5.00" />		<!-- I integral gain for translation control -->
+			<param name="D_pos"		value="8.0" />		<!-- D derivative gain for translation control -->
+
+			<param name="I_rot_lim"	value="0.80" />		<!-- I integral torque limit for orientation control -->
+			<param name="I_pos_lim"	value="8.00" />		<!-- I integral force limit for translation control -->
+			<param name="I_t_sat"	value="5.00" />		<!-- saturation time to charge I integral [sec] -->
+			<param name="I_zmin"	value="0.30" />		<!-- height at which to start running integral gain [m] -->
+
+			<param name="A_rot"		value="0.0" />		<!-- virtual impedance factor on orientation [0-1] -->
+			<param name="A_pos"		value="0.0" />		<!-- virtual impedance factor on translation [0-1] -->
+
+			<param name="f_lim"		value="40.0" />		<!-- limit force to reject wrench setpoint [N] -->
+			<param name="t_lim"		value="2.0" />		<!-- limit torque to reject wrench setpoint [N] -->
+
+		</node>
+
+		<!-- low-level flight controller. computes motor throttle & arm angles from desired wrench -->
+		<node pkg="momav" type="controller_wrench" name="controller_wrench">
+
+			<!-- position of arms [m]  -->
+			<param name="r" value="[
+				[ 0.1543,  0.0000,  0.1091],
+				[ 0.0772,  0.1336, -0.1091],
+				[-0.0772,  0.1336,  0.1091],
+				[-0.1543,  0.0000, -0.1091],
+				[-0.0772, -0.1336,  0.1091],
+				[ 0.0772, -0.1336, -0.1091]
+			]" />
+			<!-- rotation axes of arms  -->
+			<param name="x" value="[
+				[ 0.816496,  0.000000,  0.577352],
+				[ 0.408248,  0.707106, -0.577352],
+				[-0.408248,  0.707106,  0.577352],
+				[-0.816496,  0.000000, -0.577352],
+				[-0.408248, -0.707106,  0.577352],
+				[ 0.408248, -0.707106, -0.577352]
+			]" />
+			<!--zero rotation direction of arms  -->
+			<param name="z" value="[
+				[-0.408248,  0.707107, 0.577350],
+				[ 0.816497,  0.000000, 0.577350],
+				[-0.408248, -0.707107, 0.577350],
+				[-0.408248,  0.707107, 0.577350],
+				[ 0.816497,  0.000000, 0.577350],
+				[-0.408248, -0.707107, 0.577350]
+			]" />
+			<!-- motor force constant [N] -->
+			<param name="cf"	value="[
+				12.0, 12.0, 12.0, 12.0, 12.0, 12.0
+			]" />
+			<!-- motor torque constant [Nm] -->
+			<param name="cm"	value="[
+				0.180, 0.180, 0.180, 0.180, 0.180, 0.180
+			]" />
+
+			<param name="uw"		value="1.0" />		<!-- total throttle weight -->
+			<param name="upw"		value="1.0e4" />	<!-- throttle penalty weight -->
+			<param name="upl"		value="0.05" />		<!-- lower throttle limit [0-1]-->
+			<param name="uph"		value="0.95" />		<!-- higher throttle limit [0-1] -->
+			<param name="aw"		value="1.0e-5" />	<!-- arm angle speed weight -->
+			<param name="apw"		value="1.0e-3" />	<!-- arm angle speed penalty -->
+			<param name="aph"		value="3.14" />		<!-- arm angle speed higher bound [rad/sec] -->
+
+			<param name="du_max"	value="0.05" />		<!-- max throttle update in 1 solver iteration -->
+			<param name="da_max"	value="0.05" />		<!-- max arm angle update in 1 solver iteration -->
+			<param name="tresh_G"	value="1.0e-3" />	<!-- convergence treshold for constraint norm -->
+			<param name="tresh_O"	value="1.0e-3" />	<!-- convergence treshold for objective reduction -->
+			<param name="max_iter"	value="32" />		<!-- max solver iterations before giving up -->
+			<param name="max_fail"	value="4" />		<!-- max nr of consecutively fail before trying reset -->
+
+		</node>
+
+
+		<!-- HARDWARE DRIVERS -->
+
+		<!-- driver for servo & esc communication. sends setpoints an get telemetry -->
+		<node pkg="momav" type="driver_actuator" name="driver_actuator">
+
+			<param name="device"	value="/dev/i2c-8" />		<!-- device path for i2c -->
+
+		</node>
+
+		<!-- driver for MTi3 AHRS + BMP390 barometer. provides body orientation estimates -->
+		<node pkg="momav" type="driver_imu" name="driver_imu" if="$(eval state == 'imu')">
+
+			<param name="dev_i2c"	value="/dev/i2c-8" />		<!-- device path for bmp390 i2c connection -->
+			<param name="dev_ser"	value="/dev/ttyS2" />		<!-- device path for mti3 serial connection -->
+			<param name="gyro_cal"	value="2.0" />				<!-- gyroscope calibration stationary time [sec] -->
+
+		</node>
+
+		<!-- driver for Intel RealSense T265 tracking camera. provides body orientation & position estimates -->
+		<node pkg="momav" type="driver_cam" name="driver_cam" if="$(eval state == 'cam')">
+
+			<param name="dev_id"	value="132222111203" type="str"/>	<!-- device serial number -->
+
+			<!-- position of camera [m]  -->
+			<param name="pos" value="[
+				-0.0653, 0.0000, 0.0400
+			]" />
+			<!-- orientation of camera (cam->body)[so3] -->
+			<param name="rot" value="[
+				[ 0.333333, 0.000000, 0.942809],
+				[ 0.000000,-1.000000, 0.000000],
+				[ 0.942809, 0.000000,-0.333333]
+			]" />
+
+		</node>
+
+		<!-- driver simulating a pose sensor assuming body_setp_wrench and controller_pose/m,Ix,Iy,Iz are exactly correct -->
+		<node pkg="momav" type="driver_sim" name="driver_sim" if="$(eval state == 'sim')">
+
+			<param name="rate"		value="200"/>			<!-- update rate [hz] -->
+			<param name="tresh_R"	value="1.0e-4" />		<!-- tollerance treshold for residual -->
+			<param name="max_eval"	value="1024" />			<!-- max function evaluations before giving up -->
+			<param name="factor"	value="1.0e-2" />		<!-- initial step size factor -->
+
+		</node>
+
+
+	</group>
+
+	<!-- RECORDER -->
+	<node pkg="rosbag" type="record" name="recorder" args="-o /home/momav/bags/bag -a" output="log" if="$(eval state != 'sim')"/>
+
+</launch>

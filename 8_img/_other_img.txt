@@ -1,0 +1,2 @@
+servo mod img log
+arm test log

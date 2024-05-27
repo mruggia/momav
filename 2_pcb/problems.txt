@@ -1,0 +1,10 @@
+
+servo pcb
+	D1 & D0 are not PWM. replace with D10 & D6 (D12 doesn't work..)
+
+imu pcb
+	2 holes for i2c jumpers...
+	330Ohm pullups on i2c line
+
+esc pcb
+	capacitor mount points

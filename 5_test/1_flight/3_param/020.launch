@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<launch>
+	<group ns="momav">
+
+
+		<!-- commander. monitors the states & timeouts of the other nodes -->
+		<node pkg="momav" type="commander" name="commander" output="screen">
+			<param name="mode"		value="fly" />		<!-- require all topics to be running that are needed to fly -->
+			<param name="volt_min"	value="20.4" />		<!-- battery voltage that triggers a warning -->
+			<param name="arm_chn"	value="9" />		<!-- remote channel used for arming/disarming-->
+			<param name="timeout"	value="0.5" />		<!-- time before a missing topic triggers a timeout [sec]-->
+		</node>
+
+
+		<!-- CONTROLLERS -->
+
+		<!-- low-level flight controller. computes motor throttle & arm angles from desired wrench -->
+		<node pkg="momav" type="controller_wrench" name="controller_wrench" output="screen" >
+
+			<!-- position of arms [m]  -->
+			<param name="r" value="[
+				[ 0.1543,  0.0000,  0.1091],
+				[ 0.0772,  0.1336, -0.1091],
+				[-0.0772,  0.1336,  0.1091],
+				[-0.1543,  0.0000, -0.1091],
+				[-0.0772, -0.1336,  0.1091],
+				[ 0.0772, -0.1336, -0.1091]
+			]" />
+			<!-- rotation axes of arms  -->
+			<param name="x" value="[
+				[ 0.816496,  0.000000,  0.577352],
+				[ 0.408248,  0.707106, -0.577352],
+				[-0.408248,  0.707106,  0.577352],
+				[-0.816496,  0.000000, -0.577352],
+				[-0.408248, -0.707106,  0.577352],
+				[ 0.408248, -0.707106, -0.577352]
+			]" />
+			<!--zero rotation direction of arms  -->
+			<param name="z" value="[
+				[-0.408248,  0.707107, 0.577350],
+				[ 0.816497,  0.000000, 0.577350],
+				[-0.408248, -0.707107, 0.577350],
+				[-0.408248,  0.707107, 0.577350],
+				[ 0.816497,  0.000000, 0.577350],
+				[-0.408248, -0.707107, 0.577350]
+			]" />
+
+			<param name="cf"	value="15.6" />			<!-- motor force constant [N] -->
+			<param name="cm"	value="0.177" />		<!-- motor torque constant [Nm] -->
+
+			<param name="wu"	value="1.0" />			<!-- total throttle weight -->
+			<param name="wp"	value="400.0" />		<!-- throttle penalty weight -->
+			<param name="upl"	value="0.05" />			<!-- lower throttle limit [0-1]-->
+			<param name="uph"	value="0.95" />			<!-- higher throttle limit [0-1] -->
+			<param name="wa"	value="0.05" />			<!-- arm angle speed weight -->
+			<param name="dt"	value="0.1" />			<!-- controller timestep (given my MTi3 update rate [sec]) -->
+
+			<param name="du_max"	value="0.2" />		<!-- max throttle update in 1 solver iteration -->
+			<param name="da_max"	value="0.5" />		<!-- max arm angle update in 1 solver iteration -->
+			<param name="tresh_G"	value="1.0e-8" />	<!-- convergence treshold for constraint norm -->
+			<param name="tresh_O"	value="1.0e-6" />	<!-- convergence treshold for objective reduction -->
+			<param name="max_iter"	value="16" />		<!-- max solver iterations before giving up -->
+			<param name="max_fail"	value="100" />		<!-- max nr of times controller can consecutively fail before shutting down node -->
+
+		</node>
+
+		<!-- high-level flight controller. computes desired wrench from orientation & user input -->
+		<node pkg="momav" type="controller_pose" name="controller_pose" output="screen" >
+
+			<param name="m"			value="2.35" />		<!-- mass of momav [kg] -->
+			<param name="Ix"		value="0.020" />	<!-- angular mass of momav arround x axis [kg*m^2] -->
+			<param name="Iy"		value="0.018" />	<!-- angular mass of momav arround y axis [kg*m^2] -->
+			<param name="Iz"		value="0.020" />	<!-- angular mass of momav arround z axis [kg*m^2] -->
+
+			<param name="Fz_min"	value="8.0" />		<!-- z force at min throttle input [N] -->
+			<param name="Fz_max"	value="40.0" />		<!-- z force at max throttle input [N] -->
+			<param name="Fxy_max"	value="8.0" />		<!-- xy forces at max right stick input [N] -->
+			<param name="T_max"		value="0.2" />		<!-- roll/pitch/yaw torques at max potentiometer inputs [Nm] -->
+
+			<param name="P_rot"		value="1.2" />		<!-- P proportional gain for rotation control -->
+			<param name="I_rot"		value="0.00" />		<!-- I integral gain for rotation control -->
+			<param name="D_rot"		value="0.15" />		<!-- D derivative gain for rotation control -->
+			<param name="I_rot_cap"	value="0.2" />		<!-- I integral gain for rotation control -->
+
+			<param name="A_pos"		value="0.0" />		<!-- virtual impedance factor on translation [0-1] -->
+
+
+		</node>
+
+
+		<!-- HARDWARE DRIVERS -->
+
+		<!-- driver for servo & esc communication. sends setpoints an get telemetry -->
+		<node pkg="momav" type="driver_actuator" name="driver_actuator" output="screen">
+			<param name="device"	value="/dev/i2c-1" />	<!-- device path for i2c -->
+		</node>
+
+		<!-- driver for MTi3 AHRS. provides body orientation estimates -->
+		<node pkg="momav" type="driver_mti3" name="driver_mti3" output="screen">
+			<param name="device"	value="/dev/serial0" />	<!-- device path for serial connection -->
+			<param name="gyro_cal"	value="3.0" />			<!-- gyroscope calibration time [sec] -->
+		</node>
+
+
+
+	</group>
+
+	<!-- RECORDER -->
+	<node pkg="rosbag" type="record" name="recorder" output="screen" args="-o /home/momav/bags/bag -a" />
+
+</launch>

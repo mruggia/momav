@@ -1,0 +1,79 @@
+
+test:
+	
+
+documentation:
+
+	documentation in xournal:
+		controller_pose
+		driver_track
+		driver_cam
+		driver_sim
+
+---------------
+
+future:
+
+	fixes:
+		use wsl instances named momav, instead of Ubuntu20.04
+		replace wifi antenna (?)
+		arm 3 has damaged servo gears
+		arm 5 outer bearing holder broken
+		optitrack marker locations that are easy to calibrate
+		use radio link instead of wifi (for lower latency?)
+		"ssh -X momav@ground" crashes on CTRL+C (console.bat ssh ground trough wsl?)
+		update install instruction to work if skipping sensors (e.g. x11 comes from t265) (also fix cmakelist.txt to detect missing libraries)
+
+	code:
+		model thrust als F=const*u^2 instead of F=const*u !!! (like in PX4)
+		try to reintroduce optitrack latency compensation
+		better synchronize controller_navigation -> controller_pose -> controller_wrench (ROS2!)
+		dynamic_reconfigure
+		warning/error when rosparam's are not present
+		use imu to bridge gaps in optitrack wifi connection
+		navigator vel/acc limits on all axes together, not each on its own
+		navigator vel/acc rotation limits on rot-vec, not on yaw-pitch-roll
+		navigator jerk control (force/torque change limit)
+		PoM PID control
+		failsafe on motor/servo failure
+		horizon manual control for flying without position data
+		improve arm servo time-delay by adding PoE term beside PoM term (?)
+
+		estimate (RL) force/torque corrections with system identification
+		implement/measure CoM offset & static wrench error
+		polinomial model for motor force/torque curves (!)
+		account for gyroscopic torque from moving spinning propeller disk
+		account for battery voltage on force/torque
+		analyze/redo force/torque calibration (including axis orientations)
+	
+	mechanics:
+		esc after slip-rings (!)
+		no folding props for less vibration
+		add space for usb cables on top hex 3dprint
+		sliding connection on servo + on inner bearing (possibly soft spacer) -> easier assembly & no pulling on servo
+		screw-on brush-holder-pcb
+		shield cap for motor cables at end of arms
+		slightly more battery width space
+		jst-zh connectors don't have good contact!
+		inrush current mitigation (prevent arking on XT60 connector)
+		use 12S batteries & copper sliprings & larger brushes (e.g. from type 895 motors) for efficiency
+		use larger mavic 2 or 3 propellers
+		custom pcbs (to save weight)
+		pcb fixes described in 2_pcb/problems.txt
+		direct connection between cpu & i2c splitter board (no cable)
+	
+	sensors:
+		custom remote control (2x 3dof sticks + switches)
+		IMU, swap MTi-3 with VN-100 or MTi-630 or Pixhawk for higher data rate
+		esc with speed control and/or field oriented control
+		gps (ublox ZED-F9P) (https://www.gnss.store/gnss-gps-modules/)
+		sensor fusion for pose
+		celular link
+		fpv camera setup
+	
+	big stuff:
+		upgrade to ros2
+		takeoff/land on 3 arms instead of legs
+		tetrahedron instead of octahedron shape
+		aerial manipulator
+

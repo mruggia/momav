@@ -1,0 +1,12 @@
+long   com_freq = 10e3;   //frequency with which data is reported to master (us)
+long   com_baud = 2e6;    //baud rate of master communication
+long   enc_filt = 20;     //servo encoder filter factor (%)
+double enc_offs = 5.48;   //servo encoder offset to zero position (0-2pi)
+long   pid_freq = 1e3;    //servo pid loop frequency (us)
+double pid_kp  = 7.6;     //servo proportional gain (on measurement, not on error!)
+double pid_ki  = 220.0;   //servo integral gain
+double pid_kd  = 0.05;    //servo derivative gain
+double pid_lim = 1.8;     //servo integrator limit (output capped to 1.0)
+long   esc_freq = 2e3;    //esc throttle update frequency (us)
+long   esc_telem = 10e3;  //esc telemetry update frequency (us)
+long   esc_poles = 14;    //esc motor nr of poles

@@ -1,0 +1,424 @@
+
+#################################################
+### SET UP RADXA ROCK PI 5A #####################
+#################################################
+
+#################################################
+# configure device (radxa rock 5a)
+
+-> download etcher: https://etcher.balena.io/#download-etcher
+-> download OS rock-5a_debian_bullseye_cli_b18.img.xz: https://github.com/radxa-build/rock-5a/releases
+-> flash image to emmc card (trough emmc -> micro sd card adapter -> usb adapter)
+-> connect keyboard, screen, power -> login: rock, pw: rock
+
+# on radxa rock 5a
+sudo apt install wireless-tools
+sudo nano /etc/network/interfaces
+	iface wlan1 inet manual
+sudo nano /etc/bluetooth/main.conf
+	AutoEnable=true
+sudo systemctl disable bluetooth.service
+sudo nmcli dev wifi list --rescan yes
+sudo nmcli device wifi connect marco_net password ruggia12lmd
+sudo nmcli device wifi connect 3C:52:A1:58:37:77 password ruggia12lmd #drone_net on tplink router
+sudo nmcli connection modify marco_net connection.autoconnect-priority 1
+sudo nmcli connection modify drone_net connection.autoconnect-priority 2
+sudo nmcli -f NAME,UUID,AUTOCONNECT,AUTOCONNECT-PRIORITY c
+sudo apt install avahi-autoipd
+sudo adduser momav
+sudo usermod -aG sudo momav
+sudo nano /etc/hostname
+	momav
+sudo nano /etc/hosts
+	127.0.1.1 momav
+sudo apt install ntpdate
+sudo sh -c "echo '${USER} ALL=(root) NOPASSWD: /usr/sbin/ntpdate' >/etc/sudoers.d/ntpdate"
+sudo reboot
+sudo apt update
+
+# on host pc
+ssh momav@momav
+-> set up ssh
+	mkdir ~/.ssh
+	chmod 700 ~/.ssh
+	touch ~/.ssh/authorized_keys
+	chmod 600 ~/.ssh/authorized_keys
+	touch ~/.hushlogin
+	-> windows host:
+		ssh-keygen -t rsa -b 2048
+		type %userprofile%\.ssh\id_rsa.pub | ssh momav@momav "cat >> ~/.ssh/authorized_keys"
+	-> linux host:
+		ssh-keygen -t rsa -b 2048
+		ssh-copy-id momav@momav
+
+sudo apt update
+sudo apt install rsync
+
+-> SOLDERING: add 2.2kOhm pull-up resistor between pins 1 (3.3V) and pin 3 (I2C8_SDA_M2)
+sudo apt install -y i2c-tools libi2c-dev
+sudo usermod -a -G dialout $USER
+sudo usermod -a -G tty $USER
+sudo usermod -a -G i2c $USER
+sudo rsetup
+	-> overlays -> manage overlays
+	-> enable "I2C8-M2" and "UART2-M0" with [SPACEBAR]!
+sudo reboot
+
+cd /usr/lib/linux-image-5.10.110-12-rockchip/rockchip
+sudo fdtput --type u rk3588s-rock-5a.dtb i2c8 clock-frequency 1000000
+sudo reboot
+sudo i2cdetect -y 8
+
+# try to remove u-boot console on boot (SKIP) (DOES NOT WORK!)
+sudo apt install -y git  device-tree-compiler libncurses5 libncurses5-dev build-essential libssl-dev mtools bc python dosfstools flex bison
+mkdir ~/rk3588-sdk && cd ~/rk3588-sdk
+git clone -b stable-5.10-rock5 https://github.com/radxa/u-boot.git
+git clone -b master https://github.com/radxa/rkbin.git
+git clone -b debian https://github.com/radxa/build.git
+sudo nano build/mk-uboot.sh
+	-> modify: rk3588_bl31_v1.34.elf -> rk3588_bl31_v1.38.elf
+	-> modify: rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.08.bin -> rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.11.bin
+sudo nano u-boot/configs/rock-5a-rk3588s_defconfig
+	-> modify: CONFIG_BOOTDELAY=0 -> CONFIG_BOOTDELAY=-2
+	-> modify: CONFIG_DISPLAY=y -> CONFIG_DISPLAY=n
+sudo nano u-boot/Makefile
+	-> remove everywhere: -Werror
+./build/mk-uboot.sh rk3588s-rock-5a
+sudo dd if=./out/u-boot/idbloader.img of=/dev/mmcblk0 bs=512 seek=64
+sudo dd if=./out/u-boot/u-boot.itb of=/dev/mmcblk0 bs=512 seek=16384
+cd ~ && rm -r rk3588-sdk
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 2
+
+
+
+#################################################
+# install ros noetic 
+
+sudo apt install -y dirmngr git build-essential cmake
+sudo pip3 install -U rosdep rosinstall-generator rosinstall catkin-pkg catkin-pkg-modules catkin-tools wstool pyyaml==5.4.1
+sudo pip3 install --upgrade setuptools
+sudo rosdep init && rosdep update
+
+mkdir catkin_ws && cd catkin_ws
+rosinstall_generator ros_comm --rosdistro noetic --deps --wet-only --tar > noetic-ros_comm-wet.rosinstall
+wstool init src noetic-ros_comm-wet.rosinstall
+rosdep install -y --from-paths src --ignore-src --rosdistro noetic -r --os=debian:bullseye
+# above fails, but doesn't mater!!
+sudo src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release -DSETUPTOOLS_DEB_LAYOUT=OFF --install-space /opt/ros/noetic -j8
+source /opt/ros/noetic/setup.bash
+
+sudo apt install -y libyaml-cpp-dev
+sudo apt install -y libeigen3-dev
+
+cd ~/catkin_ws/src
+git clone https://github.com/catkin/catkin_simple.git
+rm -r common_msgs
+git clone --branch 1.12.8 https://github.com/ros/common_msgs.git
+
+cd ~/catkin_ws
+catkin build
+echo "$(echo 'source /opt/ros/noetic/setup.bash'$'\n''source ~/catkin_ws/devel/setup.bash'$'\n' | cat - ~/.bashrc)" > ~/.bashrc
+source ~/.bashrc
+mkdir ~/bags
+
+
+
+#################################################
+# install intel realsense t265
+
+cd ~/
+sudo apt install git libssl-dev libusb-1.0-0-dev libudev-dev pkg-config libgtk-3-dev -y
+sudo apt install libx11-dev xorg-dev libglu1-mesa-dev -y
+git clone --branch v2.50.0 https://github.com/IntelRealSense/librealsense.git
+cd librealsense
+sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && sudo udevadm trigger
+mkdir build && cd build
+cmake ../ -DCMAKE_BUILD_TYPE=Release -DBUILD_WITH_TM2=ON -DBUILD_EXAMPLES=false -DBUILD_GRAPHICAL_EXAMPLES=false
+sudo make uninstall && make clean && make -j8 && sudo make install
+cd ~/
+sudo rm -r librealsense
+
+
+
+#################################################
+# install xsense mti3 driver (SKIP)
+# (not operational due to console on boot problems with rock 5A. sensor is disconnected)
+
+cd ~/catkin_ws/src
+sudo apt install -y liborocos-kdl-dev
+git clone --branch 1.14.0 https://github.com/ros/actionlib.git
+git clone --branch 0.7.5 https://github.com/ros/geometry2.git
+sudo rm -r geometry2/tf2_bullet
+sudo rm -r geometry2/test_tf2
+git clone https://github.com/esteve/xsens_ros_mti_driver.git
+cd xsens_ros_mti_driver/lib/xspublic
+nano xscontroller/iointerface.h
+-> change line "PO_XsensDefaults = (PO_NoFlowControl|PO_OneStopBit)"
+make -B
+
+# https://base.movella.com/s/article/MT-SDK-Changing-the-amount-of-stop-bits-used-for-serial-communication?language=en_US
+# https://forums.raspberrypi.com/viewtopic.php?t=244741
+
+
+
+#################################################
+# install rokubi driver (SKIP)
+# (not used unless doing force/torque calibrations)
+
+cd ~/catkin_ws/src
+git clone --branch 1.11.0 https://github.com/ros/diagnostics.git
+git clone --branch 1.8.6 https://github.com/ros/bond_core.git
+git clone --branch 1.14.13 https://github.com/ros/xacro.git
+git clone --branch 0.12.0 https://github.com/ros/roslint.git
+git clone --branch 0.6.1 https://gitlab.com/botasys/bota_driver.git
+sudo rm -r bota_driver/rokubimini_ethercat
+sudo rm -r bota_driver/bota_driver_testing
+echo -e '\n\nset(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")' >> bota_driver/rokubimini_serial/CMakeLists.txt
+
+
+
+#################################################
+# build all new nodes
+
+cd ~/catkin_ws
+catkin build
+
+
+
+#################################################
+### SET UP ZOTAC GROUNDSTATION ##################
+#################################################
+
+#################################################
+# install windows 11
+-> create windows install media on 3rd pc
+-> install windows 11 on zotac
+-> unlink windows account, create new account "ground"
+-> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device\DevicePasswordLessBuildVersion = 0
+-> Run: netplwiz -> Usermust enter password: UNCHECK
+
+-> install:
+	zotac drivers from usb stick (inside pc)
+	firefox + ublockorigin + sponsorblock
+	7zip, notepad++, vlc, paint.net
+	windows update
+
+-> firewall: DISABLED
+-> settings: power: no sleep, performance mode
+-> settings: for developers: developer mode, file explorer, remote desktop, ..
+
+-> services -> Windows Time: Stop
+-> regedit -> HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer\Enabled = 1
+-> regedit -> HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config\AnnounceFlags = 5
+-> services -> Windows Time: Auto & Start
+
+-> reboot
+
+#################################################
+# install WSL 1 + Ubuntu 20.04
+# (WSL 2 won't work due to virtual network adapter & USB forwarding for remote is a mess..)
+
+mkdir %USERPROFILE%\wsl\momav
+cd %USERPROFILE%\wsl\momav
+powershell -command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux"
+wsl --set-default-version 1
+wsl --unregister Ubuntu-20.04
+wsl --install --distribution Ubuntu-20.04
+-> user: momav, pw: password
+exit
+wsl --export Ubuntu-20.04 momav.tar
+wsl --import momav . momav.tar
+del momav.tar
+wsl --unregister Ubuntu-20.04
+wsl -d momav
+
+sudo nano /etc/wsl.conf
+	[boot]
+	systemd=true
+	[network]
+	generateResolvConf=false
+	[user]
+	default=momav
+exit
+wsl -d momav --shutdown && wsl -d momav
+sudo rm /etc/resolv.conf
+sudo nano /etc/resolv.conf
+	nameserver 192.168.0.1   #drone_net
+	nameserver 192.168.188.1 #marco_net
+	search local
+sudo usermod -a -G dialout $USER
+sudo apt update
+
+#################################################
+# set up ssh server
+
+sudo apt install openssh-server ssh xauth xorg
+sudo nano /etc/ssh/sshd_config
+-> PasswordAuthentication yes
+sudo sh -c "echo '${USER} ALL=(root) NOPASSWD: /usr/sbin/service ssh start' >/etc/sudoers.d/service-ssh-start"
+touch ~/.hushlogin
+sudo service ssh restart
+
+ssh-keygen -t rsa -b 2048
+ssh-copy-id momav@momav
+
+-> services -> disable OpenSSH SSH Server (if it's there)
+-> create file sshd.bat in "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+	wsl -d momav -- sudo /usr/sbin/service ssh start
+
+#################################################
+# install ros noetic
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+sudo apt update
+sudo apt install ros-noetic-desktop -y
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool python3-catkin-tools build-essential -y
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone https://github.com/catkin/catkin_simple.git
+cd ~/catkin_ws
+sudo rosdep init
+rosdep update
+
+sed -i '1i\\' ~/.bashrc
+sed -i '1i export ROS_MASTER_URI=http://momav:11311/' ~/.bashrc
+sed -i '1i source ~/catkin_ws/devel/setup.bash' ~/.bashrc
+sed -i '1i source /opt/ros/noetic/setup.bash' ~/.bashrc
+sed -i '1i\\' ~/.bashrc
+
+source ~/.bashrc
+catkin build
+source ~/.bashrc
+
+#################################################
+# other dependencies
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
+
+sudo apt install python3-pip -y
+pip install numpy --upgrade
+pip install matplotlib --upgrade
+
+# https://askubuntu.com/questions/1034313/ubuntu-18-4-libqt5core-so-5-cannot-open-shared-object-file-no-such-file-or-dir
+sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+
+sudo apt install fonts-cmu
+sudo fc-cache -fv
+rm -fr ~/.cache/matplotlib
+
+#################################################
+# optitrack motive
+
+# on WINDOWS ground pc
+-> install "Motive 3.1.0 Beta 1" (https://optitrack.com/support/downloads/motive.html)
+-> install "Visual C++ Redistributable" (https://aka.ms/vs/17/release/vc_redist.x64.exe)
+-> get license file in "\\RuggiaNAS\data cold\9_other\License_motive_tracker_initial_511879_MTRL2368_2023-10-16.dat"
+-> Edit->Settings->Streaming->NatNet:
+	Enable: True
+	Local Interface: loopback
+	Transmission Type: Unicast
+	Disable all sliders except "Rigid Bodies"
+	Up Axis: Z-Axis
+-> Exposure: 800us, Framerate: 240Hz
+-> calibrate cameras with wand
+-> set coordinate frame with ground plane
+-> create MOMAV rigid body (ID=1)
+	correct orientation and origin
+
+# on UBUNTU WSL ground pc
+cd ~
+curl -O https://s3.amazonaws.com/naturalpoint/software/NatNetSDKLinux/ubuntu/NatNet_SDK_4.1_ubuntu.tar
+tar -xf NatNet_SDK_4.1_ubuntu.tar --one-top-level
+cd NatNet_SDK_4.1_ubuntu
+sudo cp lib/libNatNet.so /usr/lib
+sudo mkdir /usr/include/natnet
+sudo cp include/*.h /usr/include/natnet
+cd ~
+sudo rm -r NatNet_SDK_4.1_ubuntu
+sudo rm NatNet_SDK_4.1_ubuntu.tar
+
+#################################################
+# set up drone_net (tp-link router)
+
+-> operation mode: 
+-> all obvious unused settings 
+	Link Aggregation, IPTV/VLAN, IGMP, DynDNS, Wireless Schedule, WPS, UPnP, SPI Firewall, Access Control, All ALG, VPN, OneMesh
+-> Wireless Settings:
+	TWT: OFF, OFDMA/MU-MIMO: OFF, Smart Connect: OFF
+	2.4GHz: drone_net, WPA2-PSK, ruggia12lmd, High, 20MHz, 12, 802.11ax only
+	5GHz: off
+-> Additional Settings (Wireless):
+	WMM: ON, AP Isolation: OFF, Airtime Fairness: OFF, Zero Wait DFS: ON
+	Beacon Interval: 100, RTS Threshold 2346, DTIM Interval 1, Group Key Update Period: 0
+
+
+#################################################
+### SET UP COMPANION PC (for coding) ############
+#################################################
+
+-> connect to drone_net via lan cable
+-> Ethernet Device properties -> IPv4 properties -> Advanced -> DNS -> Append these DNS suffixes: "local"
+
+ssh-keygen -t rsa -b 2048
+type %userprofile%\.ssh\id_rsa.pub | ssh ground@ground "cat >> ~/.ssh/authorized_keys"
+wsl && ssh-copy-id ground@ground && exit
+-> install: https://sourceforge.net/projects/vcxsrv/
+setx DISPLAY "127.0.0.1:0.0"
+C:\Progra~1\VcXsrv\xauth.exe generate 127.0.0.1:0.0 . trusted
+create file "%USERPROFILE%\.ssh\config"
+	Host *
+		ForwardAgent yes
+		ForwardX11 no
+		ForwardX11Trusted yes
+		XAuthLocation C:\Progra~1\VcXsrv\xauth.exe
+ssh -Y ground@ground
+xclock
+exit
+
+-> install wsl like for ground pc
+
+touch ~/.hushlogin
+echo -e "\nexport DISPLAY=localhost:0.0" >> ~/.bashrc
+source ~/.bashrc
+
+sudo nano /etc/ssh/ssh_config
+	ForwardAgent yes
+	ForwardX11 no
+	ForwardX11Trusted yes
+	XauthLocation /usr/bin/xauth
+
+
+#################################################
+### build & run MOMAV ###########################
+#################################################
+
+-> build sourcecode from host pc (e.g. surface_laptop)
+	console.bat -> ./make.sh (in host pc pane, bottom-left)
+-> for first run:
+	reboot ground/momav after make (otherwise momav package not found)
+	"yes" on prompts on ground pc to allow nodes to connect to network
+
+-> connect to ground pc
+	* remote desktop: "ground", "password"
+	* ssh ground@ground
+-> connect to momav
+	ssh momav@momav -J ground@ground
+
+-> manually build momav (rpi or groundstation)
+	catkin build momav --no-deps
+-> manually build momav clean (rpi or groundstation)
+	catkin build momav --no-deps --force-cmake --pre-clean
+
+-> run momav (rpi)
+	roslaunch momav core.launch state:=[imu,cam,track or sim]
+-> run momav (groundstation)
+	roslaunch momav ground.launch
+
+-> after CRASH:
+	re-zero mechanical arm position if moved!!!

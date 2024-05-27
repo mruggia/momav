@@ -1,0 +1,1286 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{2021_ollero_manipulators}{article}{}
+    \name{author}{5}{}{%
+      {{hash=OA}{%
+         family={Ollero},
+         familyi={O\bibinitperiod},
+         given={Anibal},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tognon},
+         familyi={T\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Suarez},
+         familyi={S\bibinitperiod},
+         given={Alejandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Dongjun},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Franchi},
+         familyi={F\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OA+1}
+    \strng{fullhash}{OATMSALDFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TRO.2021.3084395
+    \endverb
+    \field{pages}{626\bibrangedash 645}
+    \field{title}{Past, Present, and Future of Aerial Robotic Manipulators}
+    \field{journaltitle}{IEEE T-RO}
+    \field{year}{2022}
+  \endentry
+
+  \entry{2020_rashad_fullyactuated_review}{article}{}
+    \name{author}{5}{}{%
+      {{hash=RR}{%
+         family={Rashad},
+         familyi={R\bibinitperiod},
+         given={Ramy},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Goerres},
+         familyi={G\bibinitperiod},
+         given={Jelmer},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AR}{%
+         family={Aarts},
+         familyi={A\bibinitperiod},
+         given={Ronald},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=EJ}{%
+         family={Engelen},
+         familyi={E\bibinitperiod},
+         given={Johan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Stramigioli},
+         familyi={S\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RR+1}
+    \strng{fullhash}{RRGJAREJSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/MRA.2019.2955964
+    \endverb
+    \field{pages}{97\bibrangedash 107}
+    \field{title}{Fully Actuated Multirotor UAVs: A Literature Review}
+    \field{journaltitle}{IEEE RA Magazine}
+    \field{year}{2020}
+  \endentry
+
+  \entry{2023_howard_lynchpin}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HT}{%
+         family={Howard},
+         familyi={H\bibinitperiod},
+         given={Terrence},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Molter},
+         familyi={M\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Seely},
+         familyi={S\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=YJ}{%
+         family={Yee},
+         familyi={Y\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HT+1}
+    \strng{fullhash}{HTMCSCYJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.4271/01-16-03-0018
+    \endverb
+    \field{pages}{291\bibrangedash 303}
+    \field{title}{The Lynchpin—A Novel Geometry for Modular, Tangential,
+  Omnidirectional Flight}
+    \field{journaltitle}{SAE Int. J. Aerosp. 16(3)}
+    \field{year}{2023}
+  \endentry
+
+  \entry{2016_brescianini_octcu}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BD}{%
+         family={Brescianini},
+         familyi={B\bibinitperiod},
+         given={Dario},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DR}{%
+         family={D'Andrea},
+         familyi={D\bibinitperiod},
+         given={Raffaello},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDDR1}
+    \strng{fullhash}{BDDR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICRA.2016.7487497
+    \endverb
+    \field{pages}{3261\bibrangedash 3266}
+    \field{title}{Design, modeling and control of an omni-directional aerial
+  vehicle}
+    \field{journaltitle}{IEEE ICRA}
+    \field{year}{2016}
+  \endentry
+
+  \entry{2018_park_odar}{article}{}
+    \name{author}{7}{}{%
+      {{hash=PS}{%
+         family={Park},
+         familyi={P\bibinitperiod},
+         given={Sangyul},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Jeongseob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Ahn},
+         familyi={A\bibinitperiod},
+         given={Joonmo},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Myungsin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Her},
+         familyi={H\bibinitperiod},
+         given={Jongbeom},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YGH}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Gi-Hun},
+         giveni={G\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Dongjun},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PS+1}
+    \strng{fullhash}{PSLJAJKMHJYGHLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TMECH.2018.2848255
+    \endverb
+    \field{number}{4}
+    \field{pages}{1907\bibrangedash 1918}
+    \field{title}{ODAR: Aerial Manipulation Platform Enabling Omnidirectional
+  Wrench Generation}
+    \field{volume}{23}
+    \field{journaltitle}{IEEE/ASME}
+    \field{year}{2018}
+  \endentry
+
+  \entry{2020_hamadi_o7plus}{article}{}
+    \name{author}{4}{}{%
+      {{hash=HM}{%
+         family={Hamandi},
+         familyi={H\bibinitperiod},
+         given={Mahmoud},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Sawant},
+         familyi={S\bibinitperiod},
+         given={Kapil},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tognon},
+         familyi={T\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Franchi},
+         familyi={F\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HM+1}
+    \strng{fullhash}{HMSKTMFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICUAS48674.2020.9214065
+    \endverb
+    \field{pages}{754\bibrangedash 761}
+    \field{title}{Omni-Plus-Seven (O7+): An Omnidirectional Aerial Prototype
+  with a Minimal Number of Unidirectional Thrusters}
+    \field{journaltitle}{ICUAS}
+    \field{year}{2020}
+  \endentry
+
+  \entry{2022_flores_tiltedhex}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FA}{%
+         family={Flores},
+         familyi={F\bibinitperiod},
+         given={Alejandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FG}{%
+         family={Flores},
+         familyi={F\bibinitperiod},
+         given={Gerardo},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FAFG1}
+    \strng{fullhash}{FAFG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICUAS54217.2022.9836105
+    \endverb
+    \field{pages}{1497\bibrangedash 1503}
+    \field{title}{Fully actuated Hexa-rotor UAV: Design, construction, and
+  control. Simulation and experimental validation}
+    \field{journaltitle}{ICUAS}
+    \field{year}{2022}
+  \endentry
+
+  \entry{2021_ma_ams}{article}{}
+    \name{author}{4}{}{%
+      {{hash=ML}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Le},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={YAN},
+         familyi={Y\bibinitperiod},
+         given={Yiming},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Zhiwei},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Liu},
+         familyi={L\bibinitperiod},
+         given={Jie},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ML+1}
+    \strng{fullhash}{MLYYLZLJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.21203/rs.3.rs-676982/v1
+    \endverb
+    \field{title}{ADRC-Backstepping-Compensation Control for A Novel Aerial
+  Manipulator System}
+    \field{year}{2021}
+  \endentry
+
+  \entry{2019_rashad_hamiltonian_control}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RR}{%
+         family={Rashad},
+         familyi={R\bibinitperiod},
+         given={Ramy},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Califano},
+         familyi={C\bibinitperiod},
+         given={Federico},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Stramigioli},
+         familyi={S\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RRCFSS1}
+    \strng{fullhash}{RRCFSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/LRA.2019.2932864
+    \endverb
+    \field{number}{4}
+    \field{pages}{4378\bibrangedash 4385}
+    \field{title}{Port-Hamiltonian Passivity-Based Control on SE(3) of a Fully
+  Actuated UAV for Aerial Physical Interaction Near-Hovering}
+    \field{volume}{4}
+    \field{journaltitle}{IEEE RA Letters}
+    \field{year}{2019}
+  \endentry
+
+  \entry{2018_tognon_heptw}{article}{}
+    \name{author}{2}{}{%
+      {{hash=TM}{%
+         family={Tognon},
+         familyi={T\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Franchi},
+         familyi={F\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TMFA1}
+    \strng{fullhash}{TMFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/LRA.2018.2802544
+    \endverb
+    \field{number}{3}
+    \field{pages}{2277\bibrangedash 2282}
+    \field{title}{Omnidirectional Aerial Vehicles With Unidirectional
+  Thrusters: Theory, Optimal Design, and Control}
+    \field{volume}{3}
+    \field{journaltitle}{IEEE RA Letters}
+    \field{year}{2018}
+  \endentry
+
+  \entry{2017_florentin_quad4hor}{article}{}
+    \name{author}{2}{}{%
+      {{hash=vFF}{%
+         prefix={von},
+         prefixi={v\bibinitperiod},
+         family={Frankenberg},
+         familyi={F\bibinitperiod},
+         given={Florentin},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=NS}{%
+         family={Nokleby},
+         familyi={N\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FFvNS1}
+    \strng{fullhash}{FFvNS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.11159/cdsr17.130
+    \endverb
+    \field{title}{Disturbance Rejection in Multi-Rotor Unmanned Aerial Vehicles
+  Using a Novel Rotor Geometry}
+    \field{journaltitle}{CDSR}
+    \field{year}{2017}
+  \endentry
+
+  \entry{2017_lei_cohexcd}{article}{}
+    \name{author}{5}{}{%
+      {{hash=LY}{%
+         family={Lei},
+         familyi={L\bibinitperiod},
+         given={Yao},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=JY}{%
+         family={Ji},
+         familyi={J\bibinitperiod},
+         given={Yuxia},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Changwei},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bai},
+         familyi={B\bibinitperiod},
+         given={Yue},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=XZ}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Zhijun},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYJYWCBYXZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ROMA.2017.8231740
+    \endverb
+    \field{pages}{1\bibrangedash 5}
+    \field{title}{Aerodynamic design on the non-planar rotor system of a
+  multi-rotor flying robot (MFR)}
+    \field{journaltitle}{IEEE ROMA}
+    \field{year}{2017}
+  \endentry
+
+  \entry{2013_jiang_hexc}{article}{}
+    \name{author}{2}{}{%
+      {{hash=JG}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Guangying},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=VR}{%
+         family={Voyles},
+         familyi={V\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JGVR1}
+    \strng{fullhash}{JGVR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/SSRR.2013.6719377
+    \endverb
+    \field{pages}{1\bibrangedash 6}
+    \field{title}{Hexrotor UAV platform enabling dextrous interaction with
+  structures-flight test}
+    \field{journaltitle}{IEEE SSRR}
+    \field{year}{2013}
+  \endentry
+
+  \entry{2012_toratani_hexdtet}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TD}{%
+         family={Toratani},
+         familyi={T\bibinitperiod},
+         given={Daichi},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TD1}
+    \strng{fullhash}{TD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Research and development of double tetrahedron
+  hexa-rotorcraft (DOT-HR)}
+    \verb{url}
+    \verb https://api.semanticscholar.org/CorpusID:195778790
+    \endverb
+    \field{year}{2012}
+  \endentry
+
+  \entry{2015_nikou_heptf}{article}{}
+    \name{author}{3}{}{%
+      {{hash=NA}{%
+         family={Nikou},
+         familyi={N\bibinitperiod},
+         given={Alexandros},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GG}{%
+         family={Gavridis},
+         familyi={G\bibinitperiod},
+         given={Georgios},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kyriakopoulos},
+         familyi={K\bibinitperiod},
+         given={Kostas},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NAGGKK1}
+    \strng{fullhash}{NAGGKK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICRA.2015.7139851
+    \endverb
+    \field{pages}{4698\bibrangedash 4703}
+    \field{title}{Mechanical design, modelling and control of a novel aerial
+  manipulator}
+    \field{journaltitle}{IEEE ICRA}
+    \field{year}{2015}
+  \endentry
+
+  \entry{2019_bodie_omav}{article}{}
+    \name{author}{8}{}{%
+      {{hash=BK}{%
+         family={Bodie},
+         familyi={B\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brunner},
+         familyi={B\bibinitperiod},
+         given={Maximilian},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pantic},
+         familyi={P\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Walser},
+         familyi={W\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Pfndler},
+         familyi={P\bibinitperiod},
+         given={Patrick},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=AU}{%
+         family={Angst},
+         familyi={A\bibinitperiod},
+         given={Ueli},
+         giveni={U\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Siegwart},
+         familyi={S\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Nieto},
+         familyi={N\bibinitperiod},
+         given={Juan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Robotics: Science}%
+      {Systems Foundation}%
+    }
+    \strng{namehash}{BK+1}
+    \strng{fullhash}{BKBMPMWSPPAUSRNJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.15607/rss.2019.xv.019
+    \endverb
+    \field{series}{RSS2019}
+    \field{title}{An Omnidirectional Aerial Manipulation Platform for
+  Contact-Based Inspection}
+    \field{journaltitle}{RSS}
+    \field{year}{2019}
+  \endentry
+
+  \entry{2018_kamel_voliro}{article}{}
+    \name{author}{8}{}{%
+      {{hash=KMS}{%
+         family={Kamel},
+         familyi={K\bibinitperiod},
+         given={Mina\bibnamedelima Samir},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=VS}{%
+         family={Verling},
+         familyi={V\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EO}{%
+         family={Elkhatib},
+         familyi={E\bibinitperiod},
+         given={Omar},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sprecher},
+         familyi={S\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WP}{%
+         family={Wulkop},
+         familyi={W\bibinitperiod},
+         given={Paula},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TZ}{%
+         family={Taylor},
+         familyi={T\bibinitperiod},
+         given={Zachary},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Siegwart},
+         familyi={S\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GI}{%
+         family={Gilitschenski},
+         familyi={G\bibinitperiod},
+         given={Igor},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KMS+1}
+    \strng{fullhash}{KMSVSEOSCWPTZSRGI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/MRA.2018.2866758
+    \endverb
+    \field{pages}{1\bibrangedash 1}
+    \field{title}{The Voliro Omnidirectional Hexacopter: An Agile and
+  Maneuverable Tiltable-Rotor Aerial Vehicle}
+    \field{volume}{PP}
+    \field{journaltitle}{IEEE RA Magazine}
+    \field{year}{2018}
+  \endentry
+
+  \entry{2023_cuniatro_voliro2}{article}{}
+    \name{author}{9}{}{%
+      {{hash=CE}{%
+         family={Cuniato},
+         familyi={C\bibinitperiod},
+         given={Eugenio},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={Geckeler},
+         familyi={G\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brunner},
+         familyi={B\bibinitperiod},
+         given={Maximilian},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Strübin},
+         familyi={S\bibinitperiod},
+         given={Dario},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BE}{%
+         family={Bähler},
+         familyi={B\bibinitperiod},
+         given={Elia},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=OF}{%
+         family={Ospelt},
+         familyi={O\bibinitperiod},
+         given={Fabian},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=TM}{%
+         family={Tognon},
+         familyi={T\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mintchev},
+         familyi={M\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Siegwart},
+         familyi={S\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CE+1}
+    \strng{fullhash}{CEGCBMSDBEOFTMMSSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 2305.01961
+    \endverb
+    \field{title}{Design and Control of a Micro Overactuated Aerial Robot with
+  an Origami Delta Manipulator}
+    \field{eprinttype}{arXiv}
+    \field{year}{2023}
+  \endentry
+
+  \entry{2021_buzzatto_unicopter}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BJ}{%
+         family={Buzzatto},
+         familyi={B\bibinitperiod},
+         given={Joao},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Mendes},
+         familyi={M\bibinitperiod},
+         given={Pedro},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=PN}{%
+         family={Perera},
+         familyi={P\bibinitperiod},
+         given={Navin},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Stol},
+         familyi={S\bibinitperiod},
+         given={Karl},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Liarokapis},
+         familyi={L\bibinitperiod},
+         given={Minas},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJ+1}
+    \strng{fullhash}{BJMPPNSKLM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/IROS51168.2021.9635995
+    \endverb
+    \field{pages}{6336\bibrangedash 6343}
+    \field{title}{The New Dexterity Omnirotor Platform: Design, Modeling, and
+  Control of a Modular, Versatile, All-Terrain Vehicle}
+    \field{journaltitle}{IEEE/RSJ IROS}
+    \field{year}{2021}
+  \endentry
+
+  \entry{2020_xu_bicopter}{article}{}
+    \name{author}{3}{}{%
+      {{hash=XX}{%
+         family={Xiongshi},
+         familyi={X\bibinitperiod},
+         given={Xu},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=WK}{%
+         family={Watanabe},
+         familyi={W\bibinitperiod},
+         given={Keigo},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=NI}{%
+         family={Nagai},
+         familyi={N\bibinitperiod},
+         given={Isaku},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{XXWKNI1}
+    \strng{fullhash}{XXWKNI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.18196/jrc.25116
+    \endverb
+    \field{title}{Backstepping Control for a Tandem Rotor UAV Robot with Two
+  2-DOF Tiltable Coaxial Rotors}
+    \field{volume}{2}
+    \field{journaltitle}{Journal of Robotics and Control (JRC)}
+    \field{year}{2021}
+  \endentry
+
+  \entry{2020_lee_t3multirotor}{article}{}
+    \name{author}{6}{}{%
+      {{hash=LSJ}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Seung\bibnamedelima Jae},
+         giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Dongjae},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Junha},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Dabin},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=JI}{%
+         family={Jang},
+         familyi={J\bibinitperiod},
+         given={Inkyu},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Jin},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LSJ+1}
+    \strng{fullhash}{LSJLDKJKDJIKJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TMECH.2020.2999586
+    \endverb
+    \field{number}{2}
+    \field{pages}{765\bibrangedash 776}
+    \field{title}{Fully Actuated Autonomous Flight of Thruster-Tilting
+  Multirotor}
+    \field{volume}{26}
+    \field{journaltitle}{IEEE/ASME}
+    \field{year}{2021}
+  \endentry
+
+  \entry{2020_zheng_tiltdrone}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ZP}{%
+         family={Zheng},
+         familyi={Z\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TX}{%
+         family={Tan},
+         familyi={T\bibinitperiod},
+         given={Xinkai},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=KBB}{%
+         family={Kocer},
+         familyi={K\bibinitperiod},
+         given={Basaran\bibnamedelima Bahadir},
+         giveni={B\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=YE}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Erdeng},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kovac},
+         familyi={K\bibinitperiod},
+         given={Mirko},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZP+1}
+    \strng{fullhash}{ZPTXKBBYEKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/LRA.2020.3010460
+    \endverb
+    \field{number}{4}
+    \field{pages}{6845\bibrangedash 6852}
+    \field{title}{TiltDrone: A Fully-Actuated Tilting Quadrotor Platform}
+    \field{volume}{5}
+    \field{journaltitle}{IEEE RA Letters}
+    \field{year}{2020}
+  \endentry
+
+  \entry{2016_ryll_fasthex}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Ryll},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BD}{%
+         family={Bicego},
+         familyi={B\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Franchi},
+         familyi={F\bibinitperiod},
+         given={Antonio},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMBDFA1}
+    \strng{fullhash}{RMBDFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/IROS.2016.7759271
+    \endverb
+    \field{pages}{1689\bibrangedash 1694}
+    \field{title}{Modeling and control of FAST-Hex: A fully-actuated by
+  synchronized-tilting hexarotor}
+    \field{journaltitle}{IEEE/RSJ IROS}
+    \field{year}{2016}
+  \endentry
+
+  \entry{2016_odelga_quadvcdc}{article}{}
+    \name{author}{3}{}{%
+      {{hash=OM}{%
+         family={Odelga},
+         familyi={O\bibinitperiod},
+         given={Marcin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Stegagno},
+         familyi={S\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Bülthoff},
+         familyi={B\bibinitperiod},
+         given={Heinrich},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OMSPBH1}
+    \strng{fullhash}{OMSPBH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/AIM.2016.7576784
+    \endverb
+    \field{pages}{306\bibrangedash 311}
+    \field{title}{A fully actuated quadrotor UAV with a propeller tilting
+  mechanism: Modeling and control}
+    \field{journaltitle}{IEEE AIM}
+    \field{year}{2016}
+  \endentry
+
+  \entry{2015_kastelan_tricopter}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KD}{%
+         family={Kastelan},
+         familyi={K\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Konz},
+         familyi={K\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rudolph},
+         familyi={R\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KDKMRJ1}
+    \strng{fullhash}{KDKMRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2015.08.063
+    \endverb
+    \field{issn}{2405-8963}
+    \field{number}{9}
+    \field{pages}{79\bibrangedash 84}
+    \field{title}{Fully Actuated Tricopter with Pilot-Supporting Control}
+    \field{volume}{48}
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{year}{2015}
+  \endentry
+
+  \entry{2015_moutinho_tiltquadrotor}{article}{}
+    \name{author}{3}{}{%
+      {{hash=MA}{%
+         family={Moutinho},
+         familyi={M\bibinitperiod},
+         given={Alexandra},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=ME}{%
+         family={Mateos},
+         familyi={M\bibinitperiod},
+         given={Estanislao},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=CF}{%
+         family={Cunha},
+         familyi={C\bibinitperiod},
+         given={Filipe},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MAMECF1}
+    \strng{fullhash}{MAMECF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICARSC.2015.38
+    \endverb
+    \field{pages}{156\bibrangedash 161}
+    \field{title}{The Tilt-Quadrotor: Concept, Modeling and Identification}
+    \field{journaltitle}{IEEE ICARSC}
+    \field{year}{2015}
+  \endentry
+
+  \entry{2015_ryll_quadvc}{article}{}
+    \name{author}{3}{}{%
+      {{hash=RM}{%
+         family={Ryll},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BH}{%
+         family={Bülthoff},
+         familyi={B\bibinitperiod},
+         given={Heinrich},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=GP}{%
+         family={Giordano},
+         familyi={G\bibinitperiod},
+         given={Paolo},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMBHGP1}
+    \strng{fullhash}{RMBHGP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TCST.2014.2330999
+    \endverb
+    \field{number}{2}
+    \field{pages}{540\bibrangedash 556}
+    \field{title}{A Novel Overactuated Quadrotor Unmanned Aerial Vehicle:
+  Modeling, Control, and Experimental Validation}
+    \field{volume}{23}
+    \field{journaltitle}{IEEE TCST}
+    \field{year}{2015}
+  \endentry
+
+  \entry{2013_sequigasco_quadvcd}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SGP}{%
+         family={Segui-Gasco},
+         familyi={S\bibinithyphendelim G\bibinitperiod},
+         given={Pau},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=ARY}{%
+         family={Al-Rihani},
+         familyi={A\bibinithyphendelim R\bibinitperiod},
+         given={Yazan},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SHS}{%
+         family={Shin},
+         familyi={S\bibinitperiod},
+         given={Hyo-Sang},
+         giveni={H\bibinithyphendelim S\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Savvaris},
+         familyi={S\bibinitperiod},
+         given={Al},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SGP+1}
+    \strng{fullhash}{SGPARYSHSSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/ICUAS.2013.6564711
+    \endverb
+    \field{pages}{373\bibrangedash 382}
+    \field{title}{A novel actuation concept for a multi rotor UAV}
+    \field{journaltitle}{ICUAS}
+    \field{year}{2013}
+  \endentry
+
+  \entry{2018_junaid_dualtiltquad}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BJA}{%
+         family={Bin\bibnamedelima Junaid},
+         familyi={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DDCSA}{%
+         family={Diaz De Cerio\bibnamedelima Sanchez},
+         familyi={D\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  C\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={Alejandro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BBJ}{%
+         family={Betancor\bibnamedelima Bosch},
+         familyi={B\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VN}{%
+         family={Vitzilaios},
+         familyi={V\bibinitperiod},
+         given={Nikolaos},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=ZY}{%
+         family={Zweiri},
+         familyi={Z\bibinitperiod},
+         given={Yahya},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BJA+1}
+    \strng{fullhash}{BJADDCSABBJVNZY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.3390/robotics7040065
+    \endverb
+    \field{issn}{2218-6581}
+    \field{number}{4}
+    \field{title}{Design and Implementation of a Dual-Axis Tilting Quadcopter}
+    \field{volume}{7}
+    \field{journaltitle}{Robotics}
+    \field{year}{2018}
+  \endentry
+
+  \entry{2017_beauregard_pom}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Beauregard},
+         familyi={B\bibinitperiod},
+         given={Brett},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://brettbeauregard.com/blog/2017/06/introducing-proportional-on-measurement/}}
+    \field{title}{Introducing Proportional On Measurement}
+    \field{year}{2017}
+  \endentry
+
+  \entry{1999_wright_numop}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{2}{}{%
+      {{hash=WS}{%
+         family={Wright},
+         familyi={W\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Nocedal},
+         familyi={N\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WSNJ+1}
+    \strng{fullhash}{WSNJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{67-68}
+    \field{pages}{7}
+    \field{title}{Numerical optimization}
+    \field{volume}{35}
+    \field{journaltitle}{Springer Science}
+    \field{year}{1999}
+  \endentry
+\enddatalist
+\endinput

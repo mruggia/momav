@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+	<group ns="momav">
+
+		<!-- GUI for monitoring MOMAV state -->
+		<node pkg="momav" type="monitor.py" name="monitor"/>
+
+		<!-- driver for rc transmitter. converts remote inputs to rostopics. (should run on ground pc) -->
+		<node pkg="momav" type="driver_remote" name="driver_remote">
+
+			<param name="device"	value="/dev/ttyS3" />	<!-- device path for serial connection -->
+
+			<param name="flt_lim"   value=".002" />		<!-- cuttoff error between slow and fast MA filter -->
+			<param name="flt_slow"	value="0.02" />		<!-- MA factor for slow input smoothing -->
+			<param name="flt_fast"	value="0.20" />		<!-- MA factor for fast input smoothing -->
+
+		</node>
+
+		<!-- driver for optitrack mocap system -->
+		<node pkg="momav" type="driver_track" name="driver_track">
+			
+			<param name="body_id"	value="1" />		<!-- ID of optitrack motive rigid body -->
+			<param name="flt_win"	value="24" />		<!-- window size for vel/acc filter (0.1sec at 240Hz) -->
+			<param name="flt_pow"	value="2" />		<!-- power of polynomial fit for vel/acc filter -->
+
+		</node>
+
+	</group>
+</launch>

@@ -1,0 +1,8 @@
+# driver_imu
+cs_add_executable(driver_imu src/driver_imu.cpp)
+target_include_directories(driver_imu PUBLIC ../xsens_ros_mti_driver/lib/xspublic)
+target_link_directories(driver_imu PUBLIC ../xsens_ros_mti_driver/lib/xspublic/xscontroller ../xsens_ros_mti_driver/lib/xspublic/xscommon ../xsens_ros_mti_driver/lib/xspublic/xstypes)
+target_link_libraries(driver_imu xscontroller xscommon xstypes pthread dl i2c Eigen3::Eigen)
+
+# controller_calib
+cs_add_executable(controller_calib src/controller_calib.cpp)

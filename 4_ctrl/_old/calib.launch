@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+
+	<group ns="momav">
+
+		<!-- commander. monitors the states & timeouts of the other nodes -->
+		<node pkg="momav" type="commander" name="commander">
+			<param name="mode"		value="none" />		<!-- dont require any specific topic to be running -->
+			<param name="volt_min"	value="20.4" />		<!-- battery voltage that triggers a warning -->
+			<param name="arm_chn"	value="9" />		<!-- remote channel used for arming/disarming-->
+			<param name="timeout"	value="0.5" />		<!-- time before a missing topic triggers a timeout [sec]-->
+		</node>
+
+
+		<!-- controller for sending calibration setpoints -->
+		<node pkg="momav" type="controller_calib" name="controller_calib">
+			<param name="mode"  value="cont" />		<!-- calib mode -->
+			<!--
+				"step": step trough all throttle&angle combinations for each arm
+				"cont": continuously rotate trough angles & step trough throttles
+			-->
+			<param name="thr_beg"	value="30" />	<!-- throttle at beginning -->
+			<param name="thr_stp"	value="20" />	<!-- throttle increment -->
+			<param name="thr_end"	value="70" /> 	<!-- throttle at end -->
+			<param name="arm_rev"	value="2" />	<!-- arm revolution count -->
+			<param name="arm_stp"	value="20" />	<!-- arm angle increments      (specific to "step" mode) -->
+			<param name="arm_dly"	value="1.2" />	<!-- arm angle increment delay (specific to "step" mode) -->
+			<param name="arm_spd"	value="0.1" />	<!-- arm velocity [rev/sec]    (specific to "cont" mode) -->
+		</node>
+
+
+		<!-- driver for servo & esc communication. sends setpoints an get telemetry -->
+		<node pkg="momav" type="driver_actuator" name="driver_actuator">
+			<param name="device"  value="/dev/i2c-1" />	<!-- device path for i2c -->
+		</node>
+
+	</group>
+
+
+	<!-- data recorder -->
+	<node pkg="rosbag" type="record" name="recorder" args="-o /home/momav/bags/bag -a" />
+
+</launch>
